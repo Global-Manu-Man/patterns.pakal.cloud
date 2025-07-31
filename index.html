@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 12 Microservices Patterns</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .header .author {
+            color: #7f8c8d;
+            font-size: 1rem;
+        }
+
+        .patterns-list {
+            display: grid;
+            gap: 15px;
+        }
+
+        .pattern-item {
+            display: flex;
+            align-items: center;
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 15px;
+            border-left: 5px solid #667eea;
+            transition: all 0.2s ease;
+        }
+
+        .pattern-item:hover {
+            background: #e3f2fd;
+            transform: translateX(5px);
+        }
+
+        .pattern-number {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .pattern-content {
+            flex: 1;
+        }
+
+        .pattern-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .pattern-description {
+            color: #5a6c7d;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #ffeaa7, #fdcb6e);
+            padding: 1px 4px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 2px solid #ecf0f1;
+            color: #7f8c8d;
+            font-size: 0.85rem;
+        }
+
+        /* Colores alternos para mejor visualización */
+        .pattern-item:nth-child(even) {
+            border-left-color: #e74c3c;
+        }
+        .pattern-item:nth-child(3n) {
+            border-left-color: #f39c12;
+        }
+        .pattern-item:nth-child(4n) {
+            border-left-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏗️ Top 12 Microservices Patterns</h1>
+            <div class="author">by Shalini Goyal | @goyalshalini</div>
+            <div class="description">
+                Essential design patterns for building resilient, scalable microservices architectures. From API Gateway to Circuit Breaker, master the patterns that solve real distributed system challenges.
+            </div>
+        </div>
+
+        <div class="patterns-list">
+            <div class="pattern-item">
+                <div class="pattern-number">1</div>
+                <div class="pattern-content">
+                    <div class="pattern-title">API Gateway Pattern</div>
+                    <div class="pattern-description">
+                        <span class="highlight">Punto único de entrada</span> que enruta requests al microservicio correcto.
+                    </div>
+                </div>
+            </div>
+
+            <div class="pattern-item">
+                <div class="pattern-number">2</div>
+                <div class="pattern-content">
+                    <div class="pattern-title">Saga Pattern</div>
+                    <div class="pattern-description">
+                        Maneja <span class="highlight">transacciones distribuidas</span> dividiéndolas en pasos más pequeños con acciones compensatorias.
+                    </div>
+                </div>
+            </div>
+
+            <div class="pattern-item">
+                <div class="pattern-number">3</div>
+                <div class="pattern-content">
+                    <div class="pattern-title">Event Sourcing Pattern</div>
+                    <div class="pattern-description">
+                        Almacena todos los cambios como una <span class="highlight">secuencia de eventos</span> en lugar del estado más reciente.
+                    </div>
+                </div>
+            </div>
+
+            <div class="pattern-item">
+                <div class="pattern-number">4</div>
+                <div class="pattern-content">
+                    <div class="pattern-title">CQRS Pattern</div>
+                    <div class="pattern-description">
+                        Separa las <span class="highlight">operaciones de lectura y escritura</span> para mejor escalabilidad y rendimiento.
+                    </div>
+                </div>
+            </div>
+
+            <div class="pattern-item">
+                <div class="pattern-number">5</div>
+                <div class="pattern-content">
+                    <div class="pattern-title">Strangler Fig Pattern</div>
+                    <div class="pattern-description">
+                        Reemplaza gradualmente <span class="highlight">aplicaciones monolíticas</span> con microservicios paso a paso.
+                    </div>
+                </div>
+            </div>
+
+            <div class="pattern-item">
+                <div class="pattern-number">6</div>
+                <div class="pattern-content">
+                    <div class="pattern-title">Service Discovery Pattern</div>
+                    <div class="pattern-description">
+                        Encuentra y conecta automáticamente microservicios <span class="highlight">sin direcciones fijas</span>.
+                    </div>
+                </div>
+            </div>
+
+            <div class="pattern-item">
+                <div class="pattern-number">7</div>
+                <div class="pattern-content">
+                    <div class="pattern-title">Circuit Breaker Pattern</div>
+                    <div class="pattern-description">
+                        Evita que un servicio fallido <span class="highlight">sobrecargue el sistema</span> bloqueando más llamadas.
+                    </div>
+                </div>
+            </div>
+
+            <div class="pattern-item">
+                <div class="pattern-number">8</div>
+                <div class="pattern-content">
+                    <div class="pattern-title">Bulkhead Pattern</div>
+                    <div class="pattern-description">
+                        Aísla diferentes servicios para <span class="highlight">prevenir fallos en cascada</span> que afecten todo el sistema.
+                    </div>
+                </div>
+            </div>
+
+            <div class="pattern-item">
+                <div class="pattern-number">9</div>
+                <div class="pattern-content">
+                    <div class="pattern-title">Database per Service Pattern</div>
+                    <div class="pattern-description">
+                        Da a cada microservicio <span class="highlight">su propia base de datos</span> para evitar dependencias.
+                    </div>
+                </div>
+            </div>
+
+            <div class="pattern-item">
+                <div class="pattern-number">10</div>
+                <div class="pattern-content">
+                    <div class="pattern-title">Sidecar Pattern</div>
+                    <div class="pattern-description">
+                        Adjunta servicios auxiliares como <span class="highlight">logging o monitoreo</span> junto a los microservicios principales.
+                    </div>
+                </div>
+            </div>
+
+            <div class="pattern-item">
+                <div class="pattern-number">11</div>
+                <div class="pattern-content">
+                    <div class="pattern-title">Retry Pattern</div>
+                    <div class="pattern-description">
+                        Reintenta llamadas fallidas <span class="highlight">unas pocas veces</span> antes de marcarlas como fallidas.
+                    </div>
+                </div>
+            </div>
+
+            <div class="pattern-item">
+                <div class="pattern-number">12</div>
+                <div class="pattern-content">
+                    <div class="pattern-title">API Composition Pattern</div>
+                    <div class="pattern-description">
+                        Combina datos de <span class="highlight">múltiples microservicios</span> en una sola respuesta eficiente.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            💡 Patrones esenciales para arquitecturas de microservicios exitosas
+        </div>
+    </div>
+</body>
+</html>
