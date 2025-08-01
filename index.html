@@ -4,6 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top 12 Microservices Patterns</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Essential design patterns for building resilient, scalable microservices architectures. From API Gateway to Circuit Breaker, master the patterns that solve real distributed system challenges.">
+    <meta name="keywords" content="microservices, design patterns, software architecture, API Gateway, CQRS, Event Sourcing, Circuit Breaker">
+    <meta name="author" content="Shalini Goyal">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Top 12 Microservices Patterns">
+    <meta property="og:description" content="Essential design patterns for building resilient, scalable microservices architectures. From API Gateway to Circuit Breaker, master the patterns that solve real distributed system challenges.">
+    <meta property="og:image" content="https://patterns.pakal.cloud/og-image.svg">
+    <meta name="twitter:image" content="https://patterns.pakal.cloud/og-image.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://patterns.pakal.cloud">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Pakal.cloud">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Top 12 Microservices Patterns">
+    <meta name="twitter:description" content="Essential design patterns for building resilient, scalable microservices architectures. From API Gateway to Circuit Breaker, master the patterns that solve real distributed system challenges.">
+    <meta name="twitter:image" content="https://patterns.pakal.cloud/og-image.png">
+    <meta name="twitter:creator" content="@goyalshalini">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏗️</text></svg>">
     <style>
         * {
             margin: 0;
@@ -132,6 +158,9 @@
             <div class="description">
                 Essential design patterns for building resilient, scalable microservices architectures. From API Gateway to Circuit Breaker, master the patterns that solve real distributed system challenges.
             </div>
+            <button class="download-btn" onclick="downloadImage()">
+                📸 Download as Image
+            </button>
         </div>
 
         <div class="patterns-list">
@@ -260,5 +289,37 @@
             💡 Patrones esenciales para arquitecturas de microservicios exitosas
         </div>
     </div>
+
+    <script>
+        async function downloadImage() {
+            try {
+                // Usar html2canvas para capturar la página
+                const { default: html2canvas } = await import('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.esm.min.js');
+                
+                // Capturar toda la página
+                const canvas = await html2canvas(document.body, {
+                    backgroundColor: null,
+                    scale: 2, // Mayor calidad
+                    useCORS: true,
+                    allowTaint: true
+                });
+                
+                // Crear enlace de descarga
+                const link = document.createElement('a');
+                link.download = 'microservices-patterns.png';
+                link.href = canvas.toDataURL('image/png');
+                
+                // Descargar
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+            } catch (error) {
+                console.error('Error generating image:', error);
+                // Fallback: abrir en nueva ventana para screenshot manual
+                window.print();
+            }
+        }
+    </script>
 </body>
 </html>
